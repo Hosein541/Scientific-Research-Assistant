@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+
+session/
+inputs/papers/
+outputs/
+vectordb/chroma_db
