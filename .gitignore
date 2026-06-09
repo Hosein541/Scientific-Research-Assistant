@@ -8,3 +8,4 @@ session/
 inputs/papers/
 outputs/
 vector_db/
+*.lock
