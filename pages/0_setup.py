@@ -13,96 +13,8 @@ from core.session_manager import (
     save_settings
 )
 
-
 settings = load_settings()
 
-# def reset_session():
-#     print("🚀 Starting aggressive reset...")
-
-#     # 1. بستن تمام اتصالات Chroma
-#     try:
-#         SharedSystemClient._identifier_to_system.clear()
-        
-#         # Force close all systems
-#         for key in list(SharedSystemClient._identifier_to_system.keys()):
-#             try:
-#                 system = SharedSystemClient._identifier_to_system.pop(key, None)
-#                 if system and hasattr(system, 'stop'):
-#                     system.stop()
-#             except:
-#                 pass
-#     except:
-#         pass
-
-#     gc.collect()
-#     time.sleep(0.5)   # کمی صبر برای release lock
-
-#     # 2. حذف فولدرها با روش خیلی قوی‌تر
-#     folders = [
-#         Path("inputs/papers"),
-#         Path("outputs"),
-#         Path(CHROMA_DIR) / "chroma_db",        # مسیر اصلی از config
-#         Path("vector_db/chroma_db"),
-#     ]
-
-#     for folder in folders:
-#         if not folder.exists():
-#             continue
-            
-#         print(f"Deleting: {folder}")
-#         deleted = False
-        
-#         # روش 1: shutil
-#         try:
-#             shutil.rmtree(folder, ignore_errors=True)
-#             if not folder.exists():
-#                 deleted = True
-#         except:
-#             pass
-
-#         # روش 2: Force Windows delete
-#         if not deleted and folder.exists():
-#             print(f"Force deleting with Windows commands: {folder}")
-#             try:
-#                 # استفاده از cmd برای حذف مقاوم
-#                 os.system(f'rmdir /s /q "{folder}" 2>nul')
-#                 time.sleep(0.3)
-                
-#                 # اگر هنوز مونده، فایل به فایل حذف کن
-#                 if folder.exists():
-#                     for root, dirs, files in os.walk(folder, topdown=False):
-#                         for file in files:
-#                             try:
-#                                 file_path = os.path.join(root, file)
-#                                 os.chmod(file_path, 0o777)
-#                                 os.remove(file_path)
-#                             except:
-#                                 pass
-#                         for d in dirs:
-#                             try:
-#                                 os.rmdir(os.path.join(root, d))
-#                             except:
-#                                 pass
-#                     os.rmdir(folder)
-#             except Exception as e:
-#                 print(f"Force delete failed: {e}")
-
-#     # 3. پاک کردن فایل تنظیمات
-#     try:
-#         settings_file = Path("session/settings.json")
-#         if settings_file.exists():
-#             settings_file.unlink(missing_ok=True)
-#     except:
-#         pass
-
-#     print("✅ Reset completed successfully.")
-
-    
-# if st.session_state.get("do_reset"):
-#     reset_session()
-#     st.session_state["do_reset"] = False
-#     st.success("Session restarted.")
-#     st.rerun()
 
 
 model_name = st.selectbox(
@@ -245,38 +157,6 @@ def reset_session():
         settings_file.unlink()   
 
 
-# if st.button("Restart Session"):
-#     st.session_state["confirm_restart"] = True
-
-# if st.session_state.get("confirm_restart"):
-
-#     st.warning(
-#         "This will delete all current session data."
-#     )
-
-#     col1, col2 = st.columns(2)
-
-#     with col1:
-
-#         if st.button("Yes, Delete Everything"):
-
-#             reset_session()
-
-#             st.session_state["confirm_restart"] = False
-
-#             st.success(
-#                 "Session restarted."
-#             )
-
-#             st.rerun()
-
-#     with col2:
-
-#         if st.button("Cancel"):
-
-#             st.session_state["confirm_restart"] = False
-
-#             st.rerun()
 
 
 
@@ -312,20 +192,3 @@ if st.session_state.get("confirm_restart"):
             st.session_state["confirm_restart"] = False
 
             st.rerun()
-# دکمه ریستارت
-# if st.button("Restart Session"):
-#     st.session_state["confirm_restart"] = True
-
-# if st.session_state.get("confirm_restart"):
-#     st.warning("This will delete all current session data.")
-#     col1, col2 = st.columns(2)
-#     with col1:
-#         if st.button("Yes, Delete Everything"):
-#             # به جای حذف فوری، پرچم می‌گذاریم و ریلود می‌کنیم
-#             st.session_state["do_reset"] = True
-#             st.session_state["confirm_restart"] = False
-#             st.rerun()
-#     with col2:
-#         if st.button("Cancel"):
-#             st.session_state["confirm_restart"] = False
-#             st.rerun()
