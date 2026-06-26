@@ -82,7 +82,3 @@ def main(hf_token):
             print(
                 f"Updated {json_file}"
             )
-
-
-
-# main()
