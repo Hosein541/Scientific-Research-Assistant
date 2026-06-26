@@ -114,15 +114,17 @@ model_name = st.selectbox(
     ]
 )
 
-language = st.selectbox(
-    "Language",
-    [
-        "English",
-        "Deutch",
-        "Persian",
-        "Latin"
-    ]
-)
+# language = st.selectbox(
+#     "Language",
+#     [
+#         "English",
+#         "Deutch",
+#         "Persian",
+#         "Latin"
+#     ]
+# )
+
+language = "English"
 
 google_api_key = st.text_input(
     "Google API Key",

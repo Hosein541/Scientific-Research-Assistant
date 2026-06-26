@@ -29,6 +29,7 @@ llm = ChatGoogleGenerativeAI(
             google_api_key=settings["google_api_key"],
             temperature=0.1,
         )
+language = settings["language"]
 st.title(
     "Research Chat"
 )
@@ -113,7 +114,7 @@ if question:
         st.write(question)
 
     answer = qa_chain.invoke(
-        question
+        question, 
     )
     # answer = "hello i am a human"
 

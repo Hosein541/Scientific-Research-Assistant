@@ -17,5 +17,5 @@ def run_pipeline(model_name, api_key, hf_token, language):
 # 
     # graph_creator()
 
-    # qa_chain(llm= llm, language= language, selected="")
+    qa_chain(selected="")
 

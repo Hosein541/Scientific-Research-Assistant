@@ -27,6 +27,8 @@ text_splitter = RecursiveCharacterTextSplitter(
 embedding_function = OllamaEmbeddings(
     model="embeddinggemma",
     base_url="http://localhost:11434",  # default, change if needed
+    # base_url="http://127.0.0.1:59769",
+    
 )
 
 def load_json(path):
@@ -354,7 +356,7 @@ Table Content:
                 )
     return splits
 
-def main( selected):
+def main(selected):
 
     settings = load_settings()
 

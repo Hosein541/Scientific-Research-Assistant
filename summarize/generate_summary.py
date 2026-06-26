@@ -527,6 +527,7 @@ def main(llm, language):
         else:
             print(f"Warning: The file '{md_file}' was not found or is not a regular file.")
             md_text = "" # Assign an empty string or handle the error as appropriate
+            continue
         output = extract_sections(md_text)
         # Save to JSON
         with open(
