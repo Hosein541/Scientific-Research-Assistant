@@ -11,11 +11,11 @@ def run_pipeline(model_name, api_key, hf_token, language):
             temperature=0.1,
         )
     
-    # paper_extractor(hf_token)
-# 
-    # summary_generator(llm, language)
-# 
-    # graph_creator()
+    paper_extractor(hf_token)
+
+    summary_generator(llm, language)
+
+    graph_creator()
 
     qa_chain(selected="")
 
