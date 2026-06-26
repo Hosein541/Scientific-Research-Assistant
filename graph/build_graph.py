@@ -430,7 +430,6 @@ def export_graph(graph, output_file=OUTPUT_DIR):
 
 def execute():
 
-    # OUTPUT_DIR = "/content/drive/MyDrive/uni project/output"
     SIMILARITY_THRESHOLD = 0.6
     print("Loading profiles...")
 
