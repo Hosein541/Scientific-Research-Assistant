@@ -90,7 +90,7 @@ Semantic embeddings are generated from these profile components. Pairwise simila
 ### Clone the repository
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/scientific-research-assistant.git
+git clone https://github.com/Hosein541/scientific-research-assistant.git
 cd scientific-research-assistant
 ```
 
