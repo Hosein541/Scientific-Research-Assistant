@@ -4,6 +4,9 @@ An AI-powered research assistant for analyzing scientific papers using Large Lan
 
 The system automatically extracts the content of scientific papers, generates hierarchical summaries, builds a searchable vector database, enables question answering over uploaded papers, and discovers semantic relationships between papers by constructing a knowledge graph from LLM-generated metadata and embedding similarities.
 
+
+## Demo
+[🎥 Watch Demo](https://github.com/user-attachments/assets/358c523e-1a3b-45a1-9bea-e18305c4dd30)
 ---
 
 ## Features
